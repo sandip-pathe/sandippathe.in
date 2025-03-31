@@ -8,17 +8,17 @@ Welcome to my personal portfolio website! This project showcases my work, skills
 ## 🛠 Tech Stack
 - **Framework:** Next.js (React-based)
 - **Styling:** Tailwind CSS
-- **Backend & Database:** Firebase
-- **Hosting:** Vercel
+- **Backend & Database:** Firebase, FireStore
+- **Hosting:** Firebase Hosting
 - **Animations:** Framer Motion
 
 ## 📂 Project Structure
 ```
+/public/       # Static assets (images, favicons, etc.)
 /src
  ├── app/          # Next.js App Router (Pages & Components)
  ├── components/   # Reusable UI components
  ├── styles/       # Global styles & Tailwind configurations
- ├── public/       # Static assets (images, favicons, etc.)
  └── utils/        # Utility functions
 ```
 
@@ -42,7 +42,7 @@ The site will be available at: `http://localhost:3000`
 
 
 ## 📬 Contact
-📧 Email: [your-email@example.com](mailto:your-email@example.com)  
+📧 Email: [sandippathe9689@gmail.com](mailto:sandippathe9689@gmail.com)  
 🔗 LinkedIn: [linkedin.com/in/sandippathe](https://linkedin.com/in/sandippathe)
 
 ## ⭐ Contributing
