@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Sandip Pathe - Personal Portfolio
 
-## Getting Started
+Welcome to my personal portfolio website! This project showcases my work, skills, and experiences in a sleek and interactive way. Built using **Next.js**, **TailwindCSS**, and **Firebase**, this site is designed to be fast, responsive, and easy to navigate.
 
-First, run the development server:
+## 🔗 Live Demo
+👉 [sandippathe.in](https://sandippathe.in)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠 Tech Stack
+- **Framework:** Next.js (React-based)
+- **Styling:** Tailwind CSS
+- **Backend & Database:** Firebase
+- **Hosting:** Vercel
+- **Animations:** Framer Motion
+
+## 📂 Project Structure
+```
+/src
+ ├── app/          # Next.js App Router (Pages & Components)
+ ├── components/   # Reusable UI components
+ ├── styles/       # Global styles & Tailwind configurations
+ ├── public/       # Static assets (images, favicons, etc.)
+ └── utils/        # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/sandip-pathe/sandippathe.in.git
+cd sandippathe.in
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 2️⃣ Install Dependencies
+```sh
+npm install  # or yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3️⃣ Run the Development Server
+```sh
+npm run dev  # or yarn dev
+```
+The site will be available at: `http://localhost:3000`
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contact
+📧 Email: [your-email@example.com](mailto:your-email@example.com)  
+🔗 LinkedIn: [linkedin.com/in/sandippathe](https://linkedin.com/in/sandippathe)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⭐ Contributing
+Feel free to fork the repository and submit pull requests if you have improvements or new features to add!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 🎉 Thank You for Visiting!
+Hope you like my portfolio. If you do, consider giving the repo a ⭐ on GitHub!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
