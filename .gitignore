@@ -16,6 +16,9 @@
 # next.js
 /.next/
 /out/
+/.expo/
+/.firebase/
+
 
 # production
 /build

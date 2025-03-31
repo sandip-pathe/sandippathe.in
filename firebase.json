@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "healthapp-cbb07",
+    "public": "out",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
