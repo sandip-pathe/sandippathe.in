@@ -1,19 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+      },
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        muted: "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
+        border: "var(--border)",
+        accent: "var(--accent)",
+      },
       scrollBehavior: ["smooth"],
       animation: {
         "fade-in": "fadeIn 1.5s ease-in-out",
       },
-      backgroundImage: {
-        "custom-gradient": "linear-gradient(135deg, #FFD700, #FF69B4, #8A2BE2)",
-      },
       keyframes: {
         fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },

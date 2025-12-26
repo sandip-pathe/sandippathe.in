@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# build output
+.next
+out
+
+# local env files
+.env*.local
+
+# old files
+*.old
+*.bak
+*~
+
+# misc
+.DS_Store
+*.pem

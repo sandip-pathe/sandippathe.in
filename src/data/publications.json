@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "Neural Network Classifier Using Decomposed PolSAR Images",
+    "authors": "A. Masurkar, R. Daruwala, A. Mohite, S. Pathe, V. Turkar, A. Das",
+    "venue": "IGARSS 2024 - IEEE International Geoscience and Remote Sensing Symposium",
+    "location": "Athens, Greece",
+    "year": "2024"
+  },
+  {
+    "id": "2",
+    "title": "Performance Evaluation of Optimization Functions for Neural Network Classifier",
+    "authors": "A. Masurkar, R. Daruwala, S. Pathe, A. Mohite, V. Turkar, A. Das",
+    "venue": "IGARSS 2024 - IEEE International Geoscience and Remote Sensing Symposium",
+    "location": "Athens, Greece",
+    "year": "2024"
+  }
+]

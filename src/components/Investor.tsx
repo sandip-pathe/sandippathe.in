@@ -29,88 +29,85 @@ const InvestorSnapshot = ({
     return <p className="text-gray-500">Loading...</p>;
   }
   return (
-    <div className="min-h-screen bg-[#F9F7F1] p-8 flex flex-col items-center">
-      <div className="flex max-h-[9vh] my-20">
-        <h1
-          className={`text-5xl md:text-7xl uppercase text-[#242021] font-extrabold ${anton.className}`}
-        >
-          Resume
-        </h1>
-      </div>
+    <div className="min-h-screen bg-background px-4 md:px-8 lg:px-16">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-12 font-montserrat">
+          Experience
+        </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-[90%] lg:max-w-[80%] mx-auto">
-        <div className="bg-white shadow-lg rounded-xl p-6">
-          <h2
-            className={`text-3xl font-bold text-[#434493] mb-4 ${montserrat.className}`}
-          >
-            Education
-          </h2>
-          {education.map((edu, idx) => (
-            <p key={idx} className="text-sm text-[#434493] mb-2">
-              <strong>
-                {edu.logo && (
-                  <a href={edu.link} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={edu.logo}
-                      alt={edu.institution}
-                      height={30}
-                      width={30}
-                      className="inline mr-2"
-                    />
-                  </a>
-                )}
-                {edu.title}
-              </strong>
-              {` - ${edu.institution}`} ({edu.year})
-            </p>
-          ))}
-        </div>
-
-        <div className="bg-white shadow-lg rounded-xl p-6">
-          <h2
-            className={`text-3xl font-bold text-[#bf1fba] mb-4 ${montserrat.className}`}
-          >
-            Skills
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {data[0].skills.map((item, idx) => (
-              <li key={idx} className="text-sm text-[#bf1fba] mb-2">
-                {item}
-              </li>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="bg-card border border-border rounded-xl p-6 card-hover">
+            <h3 className="text-2xl font-bold text-primary mb-4 font-montserrat">
+              Education
+            </h3>
+            {education.map((edu, idx) => (
+              <p key={idx} className="text-sm text-muted-foreground mb-3">
+                <strong>
+                  {edu.logo && (
+                    <a
+                      href={edu.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={edu.logo}
+                        alt={edu.institution}
+                        height={30}
+                        width={30}
+                        className="inline mr-2"
+                      />
+                    </a>
+                  )}
+                  {edu.title}
+                </strong>
+                {` - ${edu.institution}`} ({edu.year})
+              </p>
             ))}
           </div>
-        </div>
 
-        <div className="bg-white shadow-lg rounded-xl p-6">
-          <h2
-            className={`text-3xl font-bold text-[#FD673B] mb-4 ${montserrat.className}`}
-          >
-            Achievements
-          </h2>
-          <ul className="list-disc pl-5">
-            {data[0].achievements.map((item, idx) => (
-              <li key={idx} className="text-sm text-[#FD673B] mb-2">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div className="bg-card border border-border rounded-xl p-6 card-hover">
+            <h3 className="text-2xl font-bold text-primary mb-4 font-montserrat">
+              Skills
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {data[0].skills.map((item, idx) => (
+                <span
+                  key={idx}
+                  className="text-xs px-3 py-1 bg-primary/10 text-primary rounded-full border border-primary/20"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
 
-        <div className="bg-white shadow-lg rounded-xl p-6">
-          <h2
-            className={`text-3xl font-bold text-[#08AB88] mb-4 ${montserrat.className}`}
-          >
-            Human Skills (Soft Skills)
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {data[0].softSkills.map((skill, idx) => (
-              <span
-                key={idx}
-                className="bg-[#08AB88] text-white px-3 py-1 rounded-md text-sm"
-              >
-                {skill}
-              </span>
-            ))}
+          <div className="bg-card border border-border rounded-xl p-6 card-hover">
+            <h3 className="text-2xl font-bold text-primary mb-4 font-montserrat">
+              Achievements
+            </h3>
+            <ul className="list-disc pl-5 space-y-2">
+              {data[0].achievements.map((item, idx) => (
+                <li key={idx} className="text-sm text-muted-foreground">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-6 card-hover">
+            <h3 className="text-2xl font-bold text-primary mb-4 font-montserrat">
+              Soft Skills
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {data[0].softSkills.map((skill, idx) => (
+                <span
+                  key={idx}
+                  className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm border border-primary/20"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

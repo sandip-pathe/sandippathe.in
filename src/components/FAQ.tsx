@@ -19,30 +19,30 @@ const Accordion = ({ data }: { data: Faqs[] }) => {
   };
 
   return (
-    <div className="mt-6 max-w-[80%] lg:max-w-[80%] mx-auto w-full items-start">
-      <div className="min-h-screen bg-[#F9F7F1]">
-        <div className="flex max-h-[9vh] my-20 items-center flex-col">
-          <h1
-            className={`text-5xl md:text-6xl lg:text-7xl uppercase text-[#242021] font-extrabold ${anton.className}`}
-          >
-            Investor FAQs
-          </h1>
-        </div>
+    <div className="min-h-screen bg-background px-4 md:px-8 lg:px-16">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-6xl font-bold text-foreground mb-12 font-montserrat"
+        >
+          FAQs
+        </motion.h2>
 
         {data.map((faq, index) => (
           <div
             key={index}
-            className="border-b border-gray-200 cursor-pointer py-3"
+            className="border-b border-border cursor-pointer py-4"
             onClick={() => toggleFAQ(index)}
           >
             <div className="flex justify-between items-center">
-              <h3
-                className={`text-xl font-semibold text-[#242021] ${montserrat.className}`}
-              >
+              <h3 className="text-xl font-semibold text-foreground font-montserrat">
                 {faq.question}
               </h3>
               <span
-                className={`text-[#242021] text-xl transition-transform duration-300 ${
+                className={`text-foreground text-xl transition-transform duration-300 ${
                   openIndex === index ? "rotate-180" : ""
                 }`}
               >
@@ -53,7 +53,7 @@ const Accordion = ({ data }: { data: Faqs[] }) => {
             <AnimatePresence>
               {openIndex === index && (
                 <motion.p
-                  className={`text-xl text-[#242021] mt-2 ${montserrat.className}`}
+                  className="text-base text-muted-foreground mt-3 leading-relaxed"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}

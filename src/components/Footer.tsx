@@ -20,12 +20,14 @@ const Footer = ({ data }: { data: FooterData[] }) => {
   const footerData = data[0];
 
   return (
-    <footer className="text-gray-500 py-6">
-      <div className="max-w-[90%] mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-        <div className="text-center sm:text-left mb-4 sm:mb-0">
-          <h3 className="text-lg font-bold">🚀 {footerData.title}</h3>
-          <p className="text-sm text-gray-400">{footerData.subtitle}</p>
-          <p className="text-sm text-gray-400">
+    <footer className="bg-card border-t border-border py-12 mt-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex flex-col sm:flex-row justify-between items-center">
+        <div className="text-center sm:text-left mb-6 sm:mb-0">
+          <h3 className="text-xl font-bold text-foreground font-montserrat mb-2">
+            🚀 {footerData.title}
+          </h3>
+          <p className="text-sm text-muted-foreground">{footerData.subtitle}</p>
+          <p className="text-sm text-muted-foreground mt-2">
             © {footerData.year} All rights reserved.
           </p>
         </div>
@@ -38,7 +40,7 @@ const Footer = ({ data }: { data: FooterData[] }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="hover:text-blue-400 transition-transform transform hover:scale-110"
+              className="text-muted-foreground hover:text-primary transition-all transform hover:scale-110"
             >
               <FaLinkedin />
             </a>
@@ -50,7 +52,7 @@ const Footer = ({ data }: { data: FooterData[] }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="hover:text-gray-400 transition-transform transform hover:scale-110"
+              className="text-muted-foreground hover:text-primary transition-all transform hover:scale-110"
             >
               <FaGithub />
             </a>

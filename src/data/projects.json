@@ -1,0 +1,122 @@
+[
+  {
+    "id": "7Ml06JXBqVRd8n7FPebM",
+    "phase": "Customer Development",
+    "bmc": {
+      "KP": [
+        "Mental health professionals",
+        "Healthcare organizations",
+        "Content creators in mental health education"
+      ],
+      "CH": [
+        "App stores",
+        "Community referrals",
+        "Healthcare conferences/events"
+      ],
+      "C$": [
+        "Cloud hosting",
+        "Development costs",
+        "API usage fees",
+        "Marketing costs"
+      ],
+      "R$": [
+        "Subscription plans for doctors",
+        "Premium features",
+        "Institutional licensing for hospitals and clinics"
+      ],
+      "KR": [
+        "AI models",
+        "Therapist partnerships",
+        "Intellectual property (IP)",
+        "Data insights"
+      ],
+      "CS": [
+        "Doctors",
+        "Healthcare staff",
+        "Medical students"
+      ],
+      "VP": [
+        "Affordable mental health tools for doctors and individuals",
+        "Hyper-personalized mental health support"
+      ],
+      "CR": [
+        "In-app feedback",
+        "Peer support communities",
+        "Onboarding and educational resources"
+      ],
+      "KA": [
+        "AI chatbot development",
+        "Community management",
+        "User research and data analysis"
+      ]
+    },
+    "mvp": [
+      "AI Journaling",
+      "AI Chatbots",
+      "Community"
+    ],
+    "vision": "Democratize mental health for everyone, like WhatsApp did with messaging.",
+    "hex": "#08AB88",
+    "live": "/",
+    "importance": 30,
+    "pitchDeck": "https://blissm.app/pitchdeck",
+    "color": "bg-[#08AB88]",
+    "title": "Blissm - Mental Health App",
+    "description": "Blissm is a mental health app designed to support doctors through community engagement, AI-driven tools, and human interaction.",
+    "github": "https://github.com/sandip-pathe/blissm"
+  },
+  {
+    "id": "i5jAlNMR0SJQbQIxa70s",
+    "phase": "Completed",
+    "description": "Comprehensive platform for managing academic research. A unified platform that integrates academic profiling with project management.",
+    "title": "Research Repository Web App",
+    "github": "https://github.com/sandip-pathe/rr",
+    "importance": 23,
+    "live": "",
+    "hex": "#ACACDC",
+    "pitchDeck": "#",
+    "color": "bg-[#ACACDC]",
+    "vision": "To make it seamless for universities to manage research, from funding to publication."
+  },
+  {
+    "id": "mQfIezUOqoYtGpsQi0xT",
+    "title": "Event-Based Meme App",
+    "hex": "#FC96F9",
+    "phase": "Development",
+    "importance": 17,
+    "live": "https://meme-app.com",
+    "color": "bg-[#FC96F9]",
+    "description": "A fun way to generate memes based on trending events.",
+    "github": "https://github.com/user/meme-app",
+    "mpv": [
+      "Meme Generator",
+      "Event-Based"
+    ]
+  },
+  {
+    "id": "rKYB9ipkVOV7VhsKph3q",
+    "hex": "#BDEF3B",
+    "live": "https://attendance-app.com",
+    "title": "Attendance App for NGOs, Schools",
+    "phase": "Completed",
+    "mpv": [
+      "incomplete with some features, but still usable"
+    ],
+    "importance": 13,
+    "github": "https://github.com/sandip-pathe/sa",
+    "description": "Smart attendance tracking with analytics.",
+    "color": "bg-[#BDEF3B]"
+  },
+  {
+    "id": "vzHxKRiaqQdxbI6S70IL",
+    "live": "",
+    "color": "bg-[#FD673B]",
+    "description": "This Site",
+    "title": "My Personal Website",
+    "importance": 7,
+    "hex": "#FD673B",
+    "github": "",
+    "pitchDeck": "",
+    "phase": "Completed"
+  }
+]
