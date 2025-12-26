@@ -6,6 +6,10 @@ import Footer from "@/components/Footer";
 import { db } from "@/helper/firebase";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
+// Force dynamic rendering - always fetch fresh data
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 interface Essay {
   id: string;
   slug: string;
@@ -35,7 +39,10 @@ export default async function EssaysPage() {
     const q = query(essaysRef, orderBy("date", "desc"));
     const querySnapshot = await getDocs(q);
 
-    essays = querySnapshot.docs.map((doc) => doc.data() as Essay);
+    essays = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    })) as Essay[];
   } catch (error) {
     console.error("Error fetching essays:", error);
   }

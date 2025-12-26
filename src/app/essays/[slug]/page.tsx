@@ -6,6 +6,32 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import type { Metadata } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
 
+// Force dynamic rendering - always fetch fresh data
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
+// Convert plain text with line breaks into proper HTML
+function processContent(content: string): string {
+  // If content already has HTML tags, return as-is
+  if (/<[a-z][\s\S]*>/i.test(content)) {
+    return content;
+  }
+
+  // Split by double line breaks (paragraphs)
+  const paragraphs = content.split(/\n\n+/).filter(Boolean);
+
+  return paragraphs
+    .map((p) => {
+      // Convert single line breaks within paragraphs to <br>
+      const withBreaks = p
+        .split(/\n/)
+        .map((line) => line.trim())
+        .join("<br />");
+      return `<p>${withBreaks}</p>`;
+    })
+    .join("");
+}
+
 interface Essay {
   id: string;
   slug: string;
@@ -119,8 +145,8 @@ export default async function EssayPage({ params }: PageProps) {
       {/* Article */}
       <article className="max-w-2xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Header */}
-        <header className="mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 sm:mb-6">
+        <header className="mb-10 sm:mb-14">
+          <h1 className="text-4xl sm:text-5xl font-serif font-semibold text-foreground mb-5 sm:mb-7 leading-[1.2] tracking-tight">
             {essay.title}
           </h1>
 
@@ -144,18 +170,21 @@ export default async function EssayPage({ params }: PageProps) {
 
         {/* Content */}
         <div
-          className="prose prose-lg prose-neutral dark:prose-invert max-w-none
-            prose-headings:text-foreground
-            prose-p:text-foreground/90
-            prose-strong:text-foreground
-            prose-a:text-foreground prose-a:underline hover:prose-a:text-muted-foreground
-            prose-blockquote:border-l-border prose-blockquote:text-muted-foreground
-            prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-            prose-pre:bg-muted prose-pre:text-foreground
-            prose-ul:text-foreground/90
-            prose-ol:text-foreground/90
-            prose-li:text-foreground/90"
-          dangerouslySetInnerHTML={{ __html: essay.content }}
+          className="prose prose-lg dark:prose-invert max-w-none text-justify
+            prose-headings:font-serif prose-headings:text-foreground prose-headings:font-semibold prose-headings:tracking-tight prose-headings:leading-tight prose-headings:text-left
+            prose-p:font-serif prose-p:text-[18px] prose-p:leading-[1.9] prose-p:tracking-[0.01em] prose-p:text-foreground/95 prose-p:mb-7
+            prose-strong:text-foreground prose-strong:font-semibold
+            prose-a:text-foreground prose-a:underline prose-a:decoration-muted-foreground/50 hover:prose-a:decoration-foreground prose-a:underline-offset-[3px] prose-a:transition-colors
+            prose-blockquote:border-l-[3px] prose-blockquote:border-border prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-muted-foreground/90
+            prose-code:font-mono prose-code:text-[15px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+            prose-pre:font-mono prose-pre:bg-muted prose-pre:text-foreground prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto
+            prose-ul:text-foreground/95 prose-ul:text-[18px] prose-ul:leading-[1.9] prose-ul:text-left
+            prose-ol:text-foreground/95 prose-ol:text-[18px] prose-ol:leading-[1.9] prose-ol:text-left
+            prose-li:text-foreground/95 prose-li:mb-3
+            prose-h1:text-4xl prose-h1:mb-6 prose-h1:mt-12
+            prose-h2:text-3xl prose-h2:mb-5 prose-h2:mt-12
+            prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-10"
+          dangerouslySetInnerHTML={{ __html: processContent(essay.content) }}
         />
       </article>
     </div>

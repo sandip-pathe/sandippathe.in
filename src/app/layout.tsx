@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Inter, Lora, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,9 +9,16 @@ const inter = Inter({
   display: "swap",
 });
 
-const montserrat = Montserrat({
+const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-lora",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -73,7 +81,8 @@ export const metadata: Metadata = {
     canonical: "https://sandippathe.in",
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    google:
+      "google-site-verification=ZxvrXrN7WklsmIDIU1RbkB3AGS8Ik6PDhxdzXuKeVmg",
   },
 };
 
@@ -117,14 +126,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${lora.variable} ${jetbrainsMono.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} suppressHydrationWarning>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

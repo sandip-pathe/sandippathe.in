@@ -2,6 +2,10 @@ import { MetadataRoute } from "next";
 import { db } from "@/helper/firebase";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
+// Force dynamic generation - always fetch fresh essays
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 interface Essay {
   id: string;
   slug: string;

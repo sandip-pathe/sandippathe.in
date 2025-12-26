@@ -29,9 +29,6 @@ import {
 } from "@/helper/firebase-essays";
 import ThemeToggle from "@/components/ThemeToggle";
 
-// Fallback data for static export
-import essaysData from "@/data/essays.json";
-
 // Simple password protection - change this to your desired password
 const EDITOR_PASSWORD = "sandip2025";
 
@@ -89,12 +86,11 @@ export default function EssayEditor() {
         if (firebaseEssays.length > 0) {
           setEssays(firebaseEssays);
         } else {
-          // Fallback to static data
-          setEssays(essaysData as Essay[]);
+          setEssays([]);
         }
       } catch (error) {
         console.error("Error fetching essays:", error);
-        setEssays(essaysData as Essay[]);
+        setEssays([]);
       } finally {
         setIsLoading(false);
       }
@@ -481,8 +477,13 @@ export default function EssayEditor() {
                     onChange={(e) => setContent(e.target.value)}
                     placeholder="Start writing your essay...
 
-Use double line breaks to separate paragraphs."
-                    rows={15}
+Press Enter twice for a new paragraph.
+Press Enter once for a line break within the same paragraph.
+
+Tips:
+• Keep paragraphs focused on one idea
+• Use blank lines to separate sections"
+                    rows={20}
                     className="w-full px-3 sm:px-4 py-3 sm:py-4 bg-muted/30 dark:bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-foreground text-foreground placeholder-muted-foreground resize-none font-serif text-base sm:text-[17px] leading-[1.8]"
                   />
                 </div>

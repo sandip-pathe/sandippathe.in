@@ -25,7 +25,7 @@ export default function Home() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         {/* Hero - Problem Ownership */}
         <section className="mb-16 sm:mb-20">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-3 sm:mb-4 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-3 sm:mb-4 tracking-tight text-foreground">
             Sandip Pathe
           </h1>
           <h2 className="text-lg sm:text-xl md:text-2xl text-foreground mb-6 sm:mb-8 leading-relaxed font-normal">

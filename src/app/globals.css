@@ -3,50 +3,50 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light mode color palette */
-  --background: #fafaf9;
-  --foreground: #1a1a1a;
-  --card: #ffffff;
-  --card-foreground: #1a1a1a;
-  --popover: #ffffff;
-  --popover-foreground: #1a1a1a;
+  /* Light mode - Perplexity-style warm off-white */
+  --background: #FAFAF8;
+  --foreground: #2C2C2C;
+  --card: #FFFFFF;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
   
-  --primary: #1a1a1a;
-  --primary-foreground: #fafaf9;
-  --secondary: #f5f5f4;
-  --secondary-foreground: #1a1a1a;
+  --primary: #2C2C2C;
+  --primary-foreground: #FAFAF8;
+  --secondary: #F4F4F2;
+  --secondary-foreground: #2C2C2C;
   
-  --muted: #f5f5f4;
-  --muted-foreground: #666666;
+  --muted: #F0F0EE;
+  --muted-foreground: #6B6B6B;
   --accent: #3B82F6;
-  --accent-foreground: #fafaf9;
+  --accent-foreground: #FAFAF8;
   
   --destructive: #EF4444;
-  --destructive-foreground: #fafaf9;
+  --destructive-foreground: #FAFAF8;
   
-  --border: #e5e5e5;
-  --input: #e5e5e5;
-  --ring: #1a1a1a;
+  --border: #E8E8E6;
+  --input: #E8E8E6;
+  --ring: #2C2C2C;
   
   --radius: 0.75rem;
 }
 
 .dark {
-  /* Dark mode color palette */
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #1a1a1a;
-  --card-foreground: #fafafa;
-  --popover: #1a1a1a;
-  --popover-foreground: #fafafa;
+  /* Dark mode - Perplexity-style dark gray, not pure black */
+  --background: #202020;
+  --foreground: #ECECEC;
+  --card: #2A2A2A;
+  --card-foreground: #ECECEC;
+  --popover: #2A2A2A;
+  --popover-foreground: #ECECEC;
   
-  --primary: #fafafa;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1f2937;
-  --secondary-foreground: #fafafa;
+  --primary: #ECECEC;
+  --primary-foreground: #202020;
+  --secondary: #2F2F2F;
+  --secondary-foreground: #ECECEC;
   
-  --muted: #262626;
-  --muted-foreground: #a1a1a1;
+  --muted: #2F2F2F;
+  --muted-foreground: #B0B0B0;
   --accent: #3B82F6;
   --accent-foreground: #fafafa;
   

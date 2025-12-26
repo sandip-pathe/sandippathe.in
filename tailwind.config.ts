@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        serif: ["var(--font-lora)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       colors: {
         background: "var(--background)",
