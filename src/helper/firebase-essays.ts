@@ -1,33 +1,15 @@
-import { initializeApp, getApps } from "firebase/app";
+import { db } from "./firebase";
 import {
-  getFirestore,
   collection,
   getDocs,
-  getDoc,
-  doc,
   addDoc,
   updateDoc,
   deleteDoc,
+  doc,
   query,
   orderBy,
 } from "firebase/firestore";
 
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyC9l7CEXtrK8qtjTZWd2kV6GP3P4LUJM6U",
-  authDomain: "healthapp-cbb07.firebaseapp.com",
-  projectId: "healthapp-cbb07",
-  storageBucket: "healthapp-cbb07.firebasestorage.app",
-  messagingSenderId: "766606119808",
-  appId: "1:766606119808:web:532dfa596f14f08410e765",
-};
-
-// Initialize Firebase (only once)
-const app =
-  getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-const db = getFirestore(app);
-
-// Essay interface
 export interface Essay {
   id: string;
   slug: string;
@@ -36,21 +18,41 @@ export interface Essay {
   readTime: string;
   summary: string;
   content: string;
-  createdAt?: number;
-  updatedAt?: number;
 }
 
-// Collection reference
-const ESSAYS_COLLECTION = "essays";
+// Generate URL-friendly slug from title
+export function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
-// Get all essays
+// Estimate reading time based on word count
+export function estimateReadTime(content: string): string {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(/\s+/).filter(Boolean).length;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  return `${minutes} min read`;
+}
+
+// Get current date in "Month Year" format
+export function getCurrentDate(): string {
+  const date = new Date();
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+}
+
+// Fetch all essays from Firestore
 export async function getEssays(): Promise<Essay[]> {
   try {
-    const essaysRef = collection(db, ESSAYS_COLLECTION);
-    const q = query(essaysRef, orderBy("createdAt", "desc"));
-    const snapshot = await getDocs(q);
+    const essaysRef = collection(db, "essays");
+    const q = query(essaysRef, orderBy("date", "desc"));
+    const querySnapshot = await getDocs(q);
 
-    return snapshot.docs.map((doc) => ({
+    return querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     })) as Essay[];
@@ -60,51 +62,17 @@ export async function getEssays(): Promise<Essay[]> {
   }
 }
 
-// Get single essay by slug
-export async function getEssayBySlug(slug: string): Promise<Essay | null> {
-  try {
-    const essays = await getEssays();
-    return essays.find((e) => e.slug === slug) || null;
-  } catch (error) {
-    console.error("Error fetching essay:", error);
-    return null;
-  }
-}
-
-// Get single essay by ID
-export async function getEssayById(id: string): Promise<Essay | null> {
-  try {
-    const docRef = doc(db, ESSAYS_COLLECTION, id);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      return { id: docSnap.id, ...docSnap.data() } as Essay;
-    }
-    return null;
-  } catch (error) {
-    console.error("Error fetching essay:", error);
-    return null;
-  }
-}
-
-// Create new essay
+// Create new essay in Firestore
 export async function createEssay(
-  essay: Omit<Essay, "id">
+  essayData: Omit<Essay, "id">
 ): Promise<Essay | null> {
   try {
-    const essaysRef = collection(db, ESSAYS_COLLECTION);
-    const now = Date.now();
-    const docRef = await addDoc(essaysRef, {
-      ...essay,
-      createdAt: now,
-      updatedAt: now,
-    });
+    const essaysRef = collection(db, "essays");
+    const docRef = await addDoc(essaysRef, essayData);
 
     return {
       id: docRef.id,
-      ...essay,
-      createdAt: now,
-      updatedAt: now,
+      ...essayData,
     };
   } catch (error) {
     console.error("Error creating essay:", error);
@@ -112,17 +80,14 @@ export async function createEssay(
   }
 }
 
-// Update existing essay
+// Update existing essay in Firestore
 export async function updateEssay(
   id: string,
-  essay: Partial<Essay>
+  essayData: Partial<Omit<Essay, "id">>
 ): Promise<boolean> {
   try {
-    const docRef = doc(db, ESSAYS_COLLECTION, id);
-    await updateDoc(docRef, {
-      ...essay,
-      updatedAt: Date.now(),
-    });
+    const essayRef = doc(db, "essays", id);
+    await updateDoc(essayRef, essayData);
     return true;
   } catch (error) {
     console.error("Error updating essay:", error);
@@ -130,52 +95,14 @@ export async function updateEssay(
   }
 }
 
-// Delete essay
+// Delete essay from Firestore
 export async function deleteEssay(id: string): Promise<boolean> {
   try {
-    const docRef = doc(db, ESSAYS_COLLECTION, id);
-    await deleteDoc(docRef);
+    const essayRef = doc(db, "essays", id);
+    await deleteDoc(essayRef);
     return true;
   } catch (error) {
     console.error("Error deleting essay:", error);
     return false;
   }
 }
-
-// Helper to generate slug from title
-export function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
-// Helper to estimate read time
-export function estimateReadTime(content: string): string {
-  const wordsPerMinute = 200;
-  const words = content.split(/\s+/).length;
-  const minutes = Math.ceil(words / wordsPerMinute);
-  return `${minutes} min read`;
-}
-
-// Helper to get current month/year
-export function getCurrentDate(): string {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const now = new Date();
-  return `${months[now.getMonth()]} ${now.getFullYear()}`;
-}
-
-export { db };

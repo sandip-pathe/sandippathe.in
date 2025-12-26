@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
+import Footer from "@/components/Footer";
 import { db } from "@/helper/firebase";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
@@ -56,13 +57,6 @@ export default async function EssaysPage() {
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">Home</span>
           </Link>
-          <Link
-            href="/essays/editor"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span>Write</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </nav>
 
@@ -70,11 +64,11 @@ export default async function EssaysPage() {
       <header className="max-w-2xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-12">
         <div>
           <h1 className="text-2xl sm:text-3xl font-semibold text-foreground mb-3 sm:mb-4 tracking-tight">
-            Notes from building automation systems
+            Notes & Essays
           </h1>
           <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-            Short memos on why AI workflows fail in real businesses — and how to
-            make them survive time, humans, and uncertainty.
+            Short memos on AI Workflows, Agentic AI, Automation Systems, and
+            Production Reliability.
           </p>
         </div>
       </header>
@@ -117,11 +111,9 @@ export default async function EssaysPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-background">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-xs sm:text-sm text-muted-foreground">
-          <p>Mumbai, India</p>
-        </div>
-      </footer>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6">
+        <Footer />
+      </div>
     </div>
   );
 }

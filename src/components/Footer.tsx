@@ -1,93 +1,53 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
 
-interface FooterData {
-  title: string;
-  subtitle: string;
-  year: string;
-  socials: {
-    linkedin?: string;
-    github?: string;
-    twitter?: string;
-    email?: string;
-  };
-}
-
-const Footer = ({ data }: { data: FooterData[] }) => {
-  if (!data || data.length === 0) {
-    return <p className="text-gray-500 self-center">Loading...</p>;
-  }
-  const footerData = data[0];
-
+export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border py-12 mt-20">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex flex-col sm:flex-row justify-between items-center">
-        <div className="text-center sm:text-left mb-6 sm:mb-0">
-          <h3 className="text-xl font-bold text-foreground font-montserrat mb-2">
-            🚀 {footerData.title}
-          </h3>
-          <p className="text-sm text-muted-foreground">{footerData.subtitle}</p>
-          <p className="text-sm text-muted-foreground mt-2">
-            © {footerData.year} All rights reserved.
-          </p>
-        </div>
-
+    <footer className="pt-6 sm:pt-8 border-t border-border">
+      <div className="flex items-center justify-between">
         {/* Social Links */}
-        <div className="flex gap-4 text-2xl">
-          {footerData.socials.linkedin && (
-            <a
-              href={footerData.socials.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-muted-foreground hover:text-primary transition-all transform hover:scale-110"
-            >
-              <FaLinkedin />
-            </a>
-          )}
-
-          {footerData.socials.github && (
-            <a
-              href={footerData.socials.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-muted-foreground hover:text-primary transition-all transform hover:scale-110"
-            >
-              <FaGithub />
-            </a>
-          )}
-
-          {footerData.socials.twitter && (
-            <a
-              href={footerData.socials.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-              className="hover:text-blue-300 transition-transform transform hover:scale-110"
-            >
-              <FaXTwitter />
-            </a>
-          )}
-
-          {footerData.socials.email && (
-            <a
-              href={`mailto:${footerData.socials.email}`}
-              aria-label="Email"
-              className="hover:text-red-400 transition-transform transform hover:scale-110"
-            >
-              <FaEnvelope />
-            </a>
-          )}
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/sandip-pathe"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="text-muted-foreground hover:text-foreground transition-all hover:-rotate-12"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="https://linkedin.com/in/sandippathe"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-muted-foreground hover:text-foreground transition-all hover:-rotate-12"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a
+            href="mailto:sandippathe9689@gmail.com"
+            aria-label="Email"
+            className="text-muted-foreground hover:text-foreground transition-all hover:-rotate-12"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+          <a
+            href="https://twitter.com/sandippathe"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="text-muted-foreground hover:text-foreground transition-all hover:-rotate-12"
+          >
+            <FaXTwitter className="w-5 h-5" />
+          </a>
         </div>
-      </div>
 
-      {/* Hidden easter egg - blue heart to access editor */}
-      <div className="text-center mt-8">
+        {/* Easter egg - blue heart */}
         <Link
           href="/essays/editor"
-          className="text-blue-500 hover:text-blue-400 transition-colors text-sm opacity-60 hover:opacity-100"
+          className="text-blue-500 hover:text-blue-400 transition-colors opacity-60 hover:opacity-100"
           title="Made with love"
         >
           💙
@@ -95,6 +55,4 @@ const Footer = ({ data }: { data: FooterData[] }) => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

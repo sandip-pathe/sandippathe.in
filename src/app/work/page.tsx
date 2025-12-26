@@ -3,6 +3,7 @@ import { ArrowLeft, Mail } from "lucide-react";
 import experienceData from "@/data/experience.json";
 import type { Metadata } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Work & Projects | Sandip Pathe - AI Systems Engineer",
@@ -157,11 +158,9 @@ export default function WorkPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-xs sm:text-sm text-muted-foreground">
-          <p>Mumbai, India</p>
-        </div>
-      </footer>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <Footer />
+      </div>
     </div>
   );
 }

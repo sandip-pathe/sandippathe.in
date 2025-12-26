@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Mail, ArrowRight } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import Footer from "@/components/Footer";
 
 // Page-specific metadata for SEO
 export const metadata: Metadata = {
@@ -115,9 +116,7 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="pt-6 sm:pt-8 border-t border-border text-xs sm:text-sm text-muted-foreground">
-          <p>Mumbai, India</p>
-        </footer>
+        <Footer />
       </div>
     </main>
   );

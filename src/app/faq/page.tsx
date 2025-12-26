@@ -6,6 +6,7 @@ import { ArrowLeft, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import faqData from "@/data/faq.json";
 import ThemeToggle from "@/components/ThemeToggle";
+import Footer from "@/components/Footer";
 
 interface FAQ {
   id: string;
@@ -101,19 +102,9 @@ export default function FAQPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 text-center">
-          <p className="text-xs sm:text-sm text-muted-foreground">
-            Still have questions?{" "}
-            <a
-              href="mailto:sandippathe9689@gmail.com"
-              className="text-muted-foreground hover:text-foreground underline"
-            >
-              Get in touch
-            </a>
-          </p>
-        </div>
-      </footer>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <Footer />
+      </div>
     </div>
   );
 }
