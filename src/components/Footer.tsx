@@ -1,5 +1,6 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 interface FooterData {
   title: string;
@@ -80,6 +81,17 @@ const Footer = ({ data }: { data: FooterData[] }) => {
             </a>
           )}
         </div>
+      </div>
+
+      {/* Hidden easter egg - blue heart to access editor */}
+      <div className="text-center mt-8">
+        <Link
+          href="/essays/editor"
+          className="text-blue-500 hover:text-blue-400 transition-colors text-sm opacity-60 hover:opacity-100"
+          title="Made with love"
+        >
+          💙
+        </Link>
       </div>
     </footer>
   );
