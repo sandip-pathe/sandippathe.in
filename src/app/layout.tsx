@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "Sandip Pathe | AI Engineer & Founder",
     description:
       "Software engineer building AI orchestration systems for legal tech and healthcare.",
-    creator: "@sandippathe",
+    creator: "@sandip_pathe26",
     images: ["https://sandippathe.in/og.webp"],
   },
   alternates: {

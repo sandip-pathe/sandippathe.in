@@ -34,7 +34,7 @@ export default function Footer() {
             <Mail className="w-5 h-5" />
           </a>
           <a
-            href="https://twitter.com/sandippathe"
+            href="https://x.com/sandip_pathe26"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
