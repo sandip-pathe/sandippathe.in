@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import type { Metadata } from "next";
 import ThemeToggle from "@/components/ThemeToggle";
+import ShareButtons from "@/components/ShareButtons";
 
 // Force dynamic rendering - always fetch fresh data
 export const dynamic = "force-dynamic";
@@ -185,6 +186,13 @@ export default async function EssayPage({ params }: PageProps) {
             prose-h2:text-3xl prose-h2:mb-5 prose-h2:mt-12
             prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-10"
           dangerouslySetInnerHTML={{ __html: processContent(essay.content) }}
+        />
+
+        {/* Share Buttons */}
+        <ShareButtons
+          title={essay.title}
+          url={`https://sandippathe.in/essays/${slug}`}
+          summary={essay.summary}
         />
       </article>
     </div>

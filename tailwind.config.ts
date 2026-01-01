@@ -5,7 +5,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: [
+          "var(--font-inter)",
+          "var(--font-inter-tight)",
+          "system-ui",
+          "sans-serif",
+        ],
         serif: ["var(--font-lora)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
@@ -16,6 +21,8 @@ module.exports = {
         "muted-foreground": "var(--muted-foreground)",
         border: "var(--border)",
         accent: "var(--accent)",
+        "lc-black": "#0a0a0a",
+        "lc-gray": "#f4f4f4",
       },
       scrollBehavior: ["smooth"],
       animation: {

@@ -168,6 +168,28 @@ html {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  
+  /* Enhanced touch/click feedback for all interactive elements */
+  a, button {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    @apply transition-all duration-200;
+  }
+  
+  a:active, button:active {
+    @apply scale-[0.98] opacity-80;
+  }
+  
+  a:focus-visible, button:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
 }
 
+/* Hide scrollbar for leftclick horizontal scroll sections */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
