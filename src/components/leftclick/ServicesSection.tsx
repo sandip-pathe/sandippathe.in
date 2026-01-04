@@ -45,7 +45,7 @@ export const ServicesSection: React.FC = () => {
       details: [
         "Walk us through your current manual process",
         "We identify automation opportunities you might have missed",
-        "Get exact time/cost savings estimate (in hours and ₹)",
+        "Get exact time/cost savings estimate (in hours and $)",
         "Receive 1-page analysis - free, no obligation",
       ],
     },

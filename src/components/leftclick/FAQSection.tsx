@@ -51,7 +51,7 @@ export const FAQSection: React.FC = () => {
       question:
         "Do you work with early-stage startups or only later-stage companies?",
       answer:
-        "We work primarily with Series A/B/C companies (typically ₹2-50Cr in funding). If you're pre-Series A, we can still talk—but you need to have clear operational pain, proven revenue, and budget allocated to solve this problem.",
+        "We work primarily with Series A/B/C companies (typically $250,000-$6M in funding). If you're pre-Series A, we can still talk—but you need to have clear operational pain, proven revenue, and budget allocated to solve this problem.",
     },
     {
       question:
@@ -67,12 +67,12 @@ export const FAQSection: React.FC = () => {
     {
       question: "What if the system breaks after you deliver it?",
       answer:
-        "First 2 weeks of support are included in every project. If something breaks, we fix it immediately (4-hour response time). After that, most clients opt for ongoing maintenance (₹30K-₹1L/month) so they never have to think about it. But you own the code, so your team can maintain it if needed.",
+        "First 2 weeks of support are included in every project. If something breaks, we fix it immediately (4-hour response time). After that, most clients opt for ongoing maintenance ($300-$1,000/month) so they never have to think about it. But you own the code, so your team can maintain it if needed.",
     },
     {
       question: "How is this different from hiring a full-time developer?",
       answer:
-        "Full-time developer: ₹10-20L/year + 3-6 months to build + you manage them + they might quit\n\nUs: ₹2-8L one-time + 2-4 weeks to deliver + we manage ourselves + we've built this 10 times before\n\nYou get it faster, cheaper, and with someone who knows what works (because we've already made all the mistakes on our own startup).",
+        "Full-time developer: $12,000-$24,000/year + 3-6 months to build + you manage them + they might quit\n\nUs: $2,000-$8,000 one-time + 2-4 weeks to deliver + we manage ourselves + we've built this 10 times before\n\nYou get it faster, cheaper, and with someone who knows what works (because we've already made all the mistakes on our own startup).",
     },
     {
       question: "Do you offer a guarantee?",

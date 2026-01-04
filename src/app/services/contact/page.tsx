@@ -1,20 +1,19 @@
 "use client";
 
-import React from "react";
-import CalendlyEmbed from "@/app/automation/CalendlyEmbed";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export default function ContactPage() {
   return (
     <div
-      className="h-screen overflow-hidden bg-white text-black selection:bg-black selection:text-white antialiased"
+      className="min-h-screen bg-white text-black selection:bg-black selection:text-white antialiased"
       style={{ fontFamily: "var(--font-inter-tight), sans-serif" }}
     >
-      <main className="h-full">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl h-full py-6">
+      <main className="min-h-screen">
+        <div className="container mx-auto px-4 md:px-8 max-w-7xl min-h-screen py-6">
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-screen">
             {/* Left Column: Info */}
             <div className="flex flex-col justify-start pt-4 space-y-6">
               <Link

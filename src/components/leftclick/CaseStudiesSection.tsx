@@ -70,7 +70,7 @@ export const CaseStudiesSection: React.FC = () => {
       slug: "document-processing",
       image:
         "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
-      investment: "₹3L - ₹8L",
+      investment: "$3,000 - $8,000",
       timeline: "3-4 weeks",
       roi: "2-4 months",
     },
@@ -81,7 +81,7 @@ export const CaseStudiesSection: React.FC = () => {
       slug: "compliance-monitoring",
       image:
         "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
-      investment: "₹2L - ₹5L",
+      investment: "$2,000 - $5,000",
       timeline: "2-3 weeks",
       roi: "1-2 months",
     },
@@ -91,7 +91,7 @@ export const CaseStudiesSection: React.FC = () => {
       slug: "data-quality",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      investment: "₹1.5L - ₹4L",
+      investment: "$1,500 - $4,000",
       timeline: "2 weeks",
       roi: "1-3 months",
     },

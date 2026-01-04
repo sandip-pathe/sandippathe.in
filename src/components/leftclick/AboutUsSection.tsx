@@ -5,7 +5,7 @@ export const AboutUsSection: React.FC = () => {
   const credentials = [
     "Built document processing infrastructure handling 10,000+ legal contracts",
     "Designed compliance monitoring systems for financial regulations",
-    "Engineered data pipelines where one error costs ₹50L+",
+    "Engineered data pipelines where one error costs $60,000+",
     "Studied how top 20 Indian fintechs handle operational automation",
   ];
 

@@ -3,8 +3,7 @@
 import React from "react";
 import { SectionLabel } from "./ui/SectionLabel";
 import { Check, ChevronDown } from "lucide-react";
-import { useCurrencyDetection } from "@/hooks/useCurrencyDetection";
-import { formatPriceRange, formatMonthlyPrice } from "@/utils/pricing";
+import { formatPriceRange } from "@/utils/pricing";
 
 interface PricingSolutionProps {
   title: string;
@@ -43,7 +42,7 @@ const PricingCard: React.FC<PricingSolutionProps> = ({
 };
 
 export const PricingSection: React.FC = () => {
-  const currency = useCurrencyDetection();
+  const currency = "USD";
 
   const solutions = [
     {
@@ -117,9 +116,7 @@ export const PricingSection: React.FC = () => {
             <div className="mt-8 pt-8 border-t border-gray-200">
               <p className="text-lg">
                 <span className="font-semibold">Optional Maintenance:</span>{" "}
-                {currency === "INR"
-                  ? "₹30K-₹1L/month"
-                  : formatPriceRange(300, 1000, currency) + "/month"}
+                {formatPriceRange(300, 1000, currency) + "/month"}
               </p>
               <p className="text-gray-600 mt-2">
                 Includes: monitoring, updates, optimization, priority support
@@ -144,9 +141,8 @@ export const PricingSection: React.FC = () => {
                     Hiring 2 operations people:
                   </h4>
                   <p className="text-gray-400">
-                    {currency === "INR" ? "₹12-20L" : "$12,000-20,000"}/year +
-                    benefits + recruiting costs + management overhead + they
-                    take sick leave
+                    $12,000-20,000/year + benefits + recruiting costs +
+                    management overhead + they take sick leave
                   </p>
                 </div>
                 <div>
@@ -165,15 +161,12 @@ export const PricingSection: React.FC = () => {
                   Example ROI Calculation
                 </h4>
                 <p className="text-gray-300">
-                  If your team wastes 150 hours/month at{" "}
-                  {currency === "INR" ? "₹5,000" : "$60"}/hour ={" "}
-                  {currency === "INR" ? "₹7.5L" : "$9,000"}/year in wasted
-                  productivity
+                  If your team wastes 150 hours/month at $60/hour = $9,000/year
+                  in wasted productivity
                 </p>
                 <p className="text-gray-300 mt-2">
-                  Investment: {currency === "INR" ? "₹5L" : "$5,000"} one-time •
-                  Break-even: 8 months • Year 2 savings:
-                  {currency === "INR" ? "₹7.5L" : "$9,000"} (pure profit)
+                  Investment: $5,000 one-time • Break-even: 8 months • Year 2
+                  savings: $9,000 (pure profit)
                 </p>
               </div>
             </div>

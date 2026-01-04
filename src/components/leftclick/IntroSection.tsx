@@ -2,23 +2,18 @@
 
 import React from "react";
 import { SectionLabel } from "./ui/SectionLabel";
-import { useCurrencyDetection } from "@/hooks/useCurrencyDetection";
 
 export const IntroSection: React.FC = () => {
-  const currency = useCurrencyDetection();
-
   const problems = [
     {
       stat: "200+ hours/month",
       title:
         "Average time Series A companies waste on manual document processing",
       impact:
-        currency === "INR"
-          ? "₹8-12L/year in wasted productivity at ₹5,000/hour engineer time"
-          : "$9,600-$14,400/year in wasted productivity at $60/hour engineer time",
+        "$9,600-$14,400/year in wasted productivity at $60/hour engineer time",
     },
     {
-      stat: currency === "INR" ? "₹50L - ₹2Cr" : "$60,000 - $240,000",
+      stat: "$60,000 - $240,000",
       title:
         "Potential cost of a compliance violation or missed regulatory deadline",
       impact: "Automated monitoring pays for itself with one avoided incident",

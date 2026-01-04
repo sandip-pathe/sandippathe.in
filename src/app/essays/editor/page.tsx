@@ -30,7 +30,7 @@ import {
 import ThemeToggle from "@/components/ThemeToggle";
 
 // Simple password protection - change this to your desired password
-const EDITOR_PASSWORD = "sandip2025";
+const EDITOR_PASSWORD = "sandippathe2026";
 
 export default function EssayEditor() {
   const [essays, setEssays] = useState<Essay[]>([]);

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "https://sandippathe.in/services/contact",
   },
   robots: {
-    index: false, // Don't index the contact/calendly page
+    index: false,
     follow: true,
   },
 };
