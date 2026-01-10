@@ -45,13 +45,17 @@ export default function Footer() {
         </div>
 
         {/* Easter egg - blue heart */}
-        <Link
-          href="/essays/editor"
-          className="text-blue-500 hover:text-blue-400 transition-colors opacity-60 hover:opacity-100"
-          title="Made with love"
-        >
-          💙
-        </Link>
+
+        <div className="flex select-none gap-2 items-center text-sm">
+          <p className="text-muted-foreground">&copy; 2026 Sandip Pathe</p>
+          <Link
+            href="/essays/editor"
+            className="text-blue-500 hover:text-blue-400 transition-colors opacity-60 hover:opacity-100"
+            title="Made with love"
+          >
+            💙
+          </Link>
+        </div>
       </div>
     </footer>
   );

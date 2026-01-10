@@ -56,7 +56,7 @@ export default function WorkPage() {
       <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-8 sm:pb-12">
         <div>
           <h1 className="text-2xl sm:text-3xl font-semibold text-foreground mb-3 sm:mb-4 tracking-tight">
-            Work
+            Work & Projects
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
             Systems I've designed, built, and kept running.

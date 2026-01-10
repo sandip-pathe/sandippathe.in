@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 
 // Page-specific metadata for SEO
 export const metadata: Metadata = {
-  title: "Sandip Pathe | AI Engineer & Founder - Durable AI Workflows",
+  title: "Sandip Pathe | Building AI Systems That Don't Break",
   description:
-    "Sandip Pathe designs and runs AI workflows for systems that can't afford to break. Founder building AI orchestration for legal tech, research, and healthcare.",
+    "I spent 18 months building a legal AI startup that processed 10,000+ contracts. Here's what I learned about making automation actually work in production.",
   alternates: {
     canonical: "https://sandippathe.in",
   },
@@ -29,17 +29,21 @@ export default function Home() {
             Sandip Pathe
           </h1>
           <h2 className="text-lg sm:text-xl md:text-2xl text-foreground mb-6 sm:mb-8 leading-relaxed font-normal">
-            I design and run AI workflows for systems that can't afford to
-            break.
+            Building Anaya, Automated Compliance Detection System for Fintechs.
           </h2>
           <div className="space-y-3 sm:space-y-4 text-muted-foreground text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
             <p>
-              Most AI automations fail in production because no one owns what
-              happens when they don't behave.
+              Over the last few years, I’ve worked across legal tech,
+              compliance, and automation.
             </p>
             <p>
-              I build orchestration systems where failure modes are designed
-              for, not ignored.
+              mostly in early, undefined problem spaces where the real
+              constraints only appear after you start building.
+            </p>
+            <p>
+              I care about failure modes, incentives, and ownership: why systems
+              break in practice, and what it takes to design software that keeps
+              working when assumptions fail.
             </p>
           </div>
           <p className="text-foreground font-medium text-base sm:text-lg mb-6 sm:mb-8 border-l-2 border-foreground pl-4">
@@ -50,7 +54,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 text-foreground font-medium hover:underline underline-offset-4 text-sm sm:text-base"
           >
             <Mail className="w-4 h-4" />
-            Email me
+            sandippathe9689@gmail.com
           </a>
         </section>
 
@@ -60,18 +64,19 @@ export default function Home() {
         {/* Notes Section */}
         <section className="mb-12 sm:mb-16">
           <h3 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3 sm:mb-4">
-            Notes from building automation systems
+            ESSAYS
           </h3>
           <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base">
-            Short memos on why AI workflows fail in real businesses — and how to
-            make them survive time, humans, and uncertainty.
+            Notes from building automation systems, leverage thinking, and life
+            in general. Short snippets of mantras, reflections, and lessons
+            learned.
           </p>
           <div className="space-y-4">
             <Link
               href="/essays"
               className="group flex items-center justify-between py-3 border-b border-border hover:border-foreground transition-colors"
             >
-              <span className="text-foreground group-hover:underline underline-offset-4 text-sm sm:text-base">
+              <span className="text-foreground underline-offset-4 text-sm sm:text-base">
                 Read essays →
               </span>
             </Link>
@@ -84,14 +89,15 @@ export default function Home() {
             Work
           </h3>
           <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base">
-            Systems I've designed, built, and kept running.
+            Systems I’ve designed, built, and kept running under real
+            constraints.
           </p>
           <Link
             href="/work"
             className="group flex items-center justify-between py-3 border-b border-border hover:border-foreground transition-colors"
           >
-            <span className="text-foreground group-hover:underline underline-offset-4 text-sm sm:text-base">
-              View work →
+            <span className="text-foreground underline-offset-4 text-sm sm:text-base">
+              View projects →
             </span>
           </Link>
         </section>
@@ -99,11 +105,28 @@ export default function Home() {
         {/* Background (de-emphasized) */}
         <section className="mb-12 sm:mb-16">
           <h3 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3 sm:mb-4">
-            Background
+            About
           </h3>
           <div className="text-xs sm:text-sm text-muted-foreground space-y-2">
-            <p>IEEE IGARSS 2024 — 2 papers on neural network classifiers</p>
-            <p>VIT Mumbai — B.E. Electronics (AI/ML focus)</p>
+            <p>founder, engineer, creative technologist</p>
+            <p>
+              mumbai-based builder obsessed with making AI workflows reliable in
+              the real world.
+            </p>
+            <p>
+              launched anaya (legal ai platform) to automate contract
+              intelligence for law firms. now exploring compliance automation
+              for fintechs.
+            </p>
+            <p>
+              published researcher (ieee igarss 2024), full-stack engineer, and
+              relentless experimenter. i believe the best systems are those that
+              survive chaos, not just pass tests.
+            </p>
+            <p>
+              when not building, you’ll find me running city marathons,
+              sketching, or chasing new ideas across disciplines.
+            </p>
             <a
               href="https://github.com/sandip-pathe"
               target="_blank"

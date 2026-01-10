@@ -74,8 +74,8 @@ export default async function EssaysPage() {
             Notes & Essays
           </h1>
           <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-            Short memos on AI Workflows, Agentic AI, Automation Systems, and
-            Production Reliability.
+            Notes from building automation systems, leverage thinking, and life
+            in-general.
           </p>
         </div>
       </header>
